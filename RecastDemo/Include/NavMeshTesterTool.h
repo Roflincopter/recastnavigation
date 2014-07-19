@@ -36,7 +36,6 @@ class NavMeshTesterTool : public SampleTool
 
 	enum ToolMode
 	{
-		TOOLMODE_PATHFIND_FOLLOW,
 		TOOLMODE_PATHFIND_STRAIGHT,
 		TOOLMODE_PATHFIND_SLICED,
 		TOOLMODE_RAYCAST,
