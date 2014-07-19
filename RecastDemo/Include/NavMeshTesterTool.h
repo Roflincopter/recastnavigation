@@ -56,9 +56,6 @@ class NavMeshTesterTool : public SampleTool
 	dtPolyRef m_straightPathPolys[MAX_POLYS];
 	int m_nstraightPath;
 	float m_polyPickExt[3];
-	float m_smoothPath[MAX_SMOOTH*3];
-	int m_nsmoothPath;
-	float m_queryPoly[4*3];
 
 	static const int MAX_RAND_POINTS = 64;
 	float m_randPoints[MAX_RAND_POINTS*3];
@@ -70,20 +67,9 @@ class NavMeshTesterTool : public SampleTool
 	float m_hitPos[3];
 	float m_hitNormal[3];
 	bool m_hitResult;
-	float m_distanceToWall;
-	float m_neighbourhoodRadius;
 	float m_randomRadius;
 	bool m_sposSet;
 	bool m_eposSet;
-
-	int m_pathIterNum;
-	dtPolyRef m_pathIterPolys[MAX_POLYS]; 
-	int m_pathIterPolyCount;
-	float m_prevIterPos[3], m_iterPos[3], m_steerPos[3], m_targetPos[3];
-	
-	static const int MAX_STEER_POINTS = 10;
-	float m_steerPoints[MAX_STEER_POINTS*3];
-	int m_steerPointCount;
 	
 public:
 	NavMeshTesterTool();

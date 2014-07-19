@@ -220,15 +220,11 @@ NavMeshTesterTool::NavMeshTesterTool() :
 	m_endRef(0),
 	m_npolys(0),
 	m_nstraightPath(0),
-	m_nsmoothPath(0),
 	m_nrandPoints(0),
 	m_randPointsInCircle(false),
 	m_hitResult(false),
-	m_distanceToWall(0),
 	m_sposSet(false),
-	m_eposSet(false),
-	m_pathIterNum(0),
-	m_steerPointCount(0)
+    m_eposSet(false)
 {
 	m_filter.setIncludeFlags(SAMPLE_POLYFLAGS_ALL ^ SAMPLE_POLYFLAGS_DISABLED);
 	m_filter.setExcludeFlags(0);
@@ -237,7 +233,6 @@ NavMeshTesterTool::NavMeshTesterTool() :
 	m_polyPickExt[1] = 4;
 	m_polyPickExt[2] = 2;
 	
-	m_neighbourhoodRadius = 2.5f;
 	m_randomRadius = 5.0f;
 }
 
@@ -263,7 +258,6 @@ void NavMeshTesterTool::init(Sample* sample)
 		m_filter.setAreaCost(SAMPLE_POLYAREA_JUMP, 1.5f);
 	}
 	
-	m_neighbourhoodRadius = sample->getAgentRadius() * 20.0f;
 	m_randomRadius = sample->getAgentRadius() * 30.0f;
 }
 
@@ -449,11 +443,9 @@ void NavMeshTesterTool::reset()
 	m_startRef = 0;
 	m_endRef = 0;
 	m_npolys = 0;
-	m_nstraightPath = 0;
-	m_nsmoothPath = 0;
+    m_nstraightPath = 0;
 	memset(m_hitPos, 0, sizeof(m_hitPos));
 	memset(m_hitNormal, 0, sizeof(m_hitNormal));
-	m_distanceToWall = 0;
 }
 
 
