@@ -95,15 +95,14 @@ int main(int /*argc*/, char** /*argv*/)
 	
 	if (presentationMode)
 	{
-		width = vi->current_w;
-		height = vi->current_h;
+        width = 1700;
+        height = 1000;
 		screen = SDL_SetVideoMode(width, height, 0, SDL_OPENGL|SDL_FULLSCREEN);
 	}
 	else
 	{	
-		width = rcMin(vi->current_w, (int)(vi->current_h * 16.0 / 9.0));
-		width = width - 80;
-		height = vi->current_h - 80;
+        width = 1700;
+        height = 1000;
 		screen = SDL_SetVideoMode(width, height, 0, SDL_OPENGL);
 	}
 	
