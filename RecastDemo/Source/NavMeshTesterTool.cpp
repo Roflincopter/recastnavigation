@@ -222,7 +222,6 @@ NavMeshTesterTool::NavMeshTesterTool() :
 	m_nstraightPath(0),
 	m_nrandPoints(0),
 	m_randPointsInCircle(false),
-	m_hitResult(false),
 	m_sposSet(false),
     m_eposSet(false)
 {
@@ -444,8 +443,6 @@ void NavMeshTesterTool::reset()
 	m_endRef = 0;
 	m_npolys = 0;
     m_nstraightPath = 0;
-	memset(m_hitPos, 0, sizeof(m_hitPos));
-	memset(m_hitNormal, 0, sizeof(m_hitNormal));
 }
 
 

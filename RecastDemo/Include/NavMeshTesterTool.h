@@ -43,13 +43,11 @@ class NavMeshTesterTool : public SampleTool
 
 	int m_straightPathOptions;
 	
-	static const int MAX_POLYS = 256;
-	static const int MAX_SMOOTH = 2048;
+    static const int MAX_POLYS = 256;
 	
 	dtPolyRef m_startRef;
 	dtPolyRef m_endRef;
 	dtPolyRef m_polys[MAX_POLYS];
-	dtPolyRef m_parent[MAX_POLYS];
 	int m_npolys;
 	float m_straightPath[MAX_POLYS*3];
 	unsigned char m_straightPathFlags[MAX_POLYS];
@@ -64,9 +62,6 @@ class NavMeshTesterTool : public SampleTool
 	
 	float m_spos[3];
 	float m_epos[3];
-	float m_hitPos[3];
-	float m_hitNormal[3];
-	bool m_hitResult;
 	float m_randomRadius;
 	bool m_sposSet;
 	bool m_eposSet;
